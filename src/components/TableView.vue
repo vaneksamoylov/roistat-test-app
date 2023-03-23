@@ -1,15 +1,13 @@
 <template>
-  <table id="customers">
-    <thead>
-      <tr>
-        <th @click="toggleSort('name')">Имя</th>
-        <th @click="toggleSort('phone')">Телефон</th>
-      </tr>
-    </thead>
-    <tbody>
+  <section>
+    <header class="header">
+        <div class="header-title" @click="toggleSort('name')">Имя</div>
+        <div class="header-title" @click="toggleSort('phone')">Телефон</div>
+    </header>
+    <main class="main">
       <TableRow v-if="!row.boss" v-for="row in sortedUsers" :key="row.id" :row="row" />
-    </tbody>
-  </table>
+    </main>
+  </section>
 </template>
 
 <script>
@@ -35,26 +33,22 @@ export default {
 </script>
 
 <style scoped>
-#customers {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
+section {
+}
+.header {
+  display: flex;
+  width: fit-content;
 }
 
-#customers td, #customers th {
-  border: 1px solid #ddd;
-  padding: 8px;
+.header-title {
+  border: 1px solid black;
+  cursor: pointer;
+  width: 350px;
+  padding: 10px 0;
+  background-color: antiquewhite;
 }
-
-#customers tr:nth-child(even){background-color: #f2f2f2;}
-
-#customers tr:hover {background-color: #ddd;}
-
-#customers th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #04AA6D;
-  color: white;
+.main {
+  border: 1px solid brown;
+  max-width: 700px;
 }
 </style>

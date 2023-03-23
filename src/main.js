@@ -3,13 +3,11 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import App from './App';
-import frag from 'vue-frag';
 
 import useOrganizationStructureStore from './store/organizationStructureStore';
 import TableRow from './components/TableRow'
 
 Vue.config.productionTip = false;
-Vue.directive('frag', frag);
 
 Vue.use(Vuex);
 

@@ -40,7 +40,6 @@ const useOrganizationStructureStore = new Vuex.Store({
       const sortedData = state.sortBy
         ? orderBy(state.users, row => row[state.sortBy], state.sortDirection)
         : state.users;
-        console.log(JSON.parse(JSON.stringify(sortedData)));
       return sortedData;
     },
     getChildren: (state, getters) => id => {
