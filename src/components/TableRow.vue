@@ -1,33 +1,39 @@
 <template>
   <div>
     <div class="row">
-      <div class="cell firstCell">
+      <div class="cell first-cell">
         <button v-if="children.length" @click="isShown = !isShown">
-          {{ isShown ? '-' : '+' }}
+          {{ isShown ? "-" : "+" }}
         </button>
-        <div class="cellContent">{{ row.name }}</div>
+        <div class="cell-content">{{ row.name }}</div>
       </div>
-      <div class="cell secondCell">
-        <div class="cellContent">{{ row.phone }}</div>
+      <div class="cell second-cell">
+        <div class="cell-content">{{ row.phone }}</div>
       </div>
     </div>
-    <table-row class="recursiveRow" v-if="isShown" v-for="child in children" :key="child.id" :row="child" />
+    <table-row
+      class="recursive-row"
+      v-if="isShown"
+      v-for="child in children"
+      :key="child.id"
+      :row="child"
+    />
   </div>
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       isShown: false,
-    }
+    };
   },
   props: ["row"],
   computed: {
     children() {
       return this.$store.getters.getChildren(this.row.id);
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -47,17 +53,17 @@ export default {
   text-align: left;
   padding: 10px;
 }
-.firstCell {
+.first-cell {
   flex-shrink: 1;
   width: 100%;
 }
-.secondCell {
+.second-cell {
   min-width: 350px;
 }
-.recursiveRow {
+.recursive-row {
   margin-left: 40px;
 }
-.cellContent {
+.cell-content {
   margin-left: 15px;
 }
 </style>

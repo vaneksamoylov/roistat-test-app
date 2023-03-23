@@ -1,8 +1,10 @@
 <template>
   <div class="modal">
-    <button class="btn" @click="isModalShown = true">Добавить</button>
+    <button class="btn" @click="isModalShown = true">
+      Добавить
+    </button>
 
-    <div v-if="isModalShown" class="popupContainer">    
+    <div v-if="isModalShown" class="popupContainer">
       <form class="popupForm">
         <span class="close" @click="isModalShown = false">X</span>
         <fieldset class="form">
@@ -10,10 +12,12 @@
             <label for="name">Имя</label>
             <input type="text" id="name" v-model="name" value="User" required />
           </div>
+
           <div class="input-container">
             <label for="phone">Телефон</label>
             <input type="text" id="phone" v-model="phone" value="User" />
           </div>
+
           <div class="input-container">
             <span>Начальник</span>
             <select v-model="boss">
@@ -23,11 +27,11 @@
               </option>
             </select>
           </div>
+
           <button :disabled="!name" @click.prevent="addUser">
-          Сохранить
-        </button>
+            Сохранить
+          </button>
         </fieldset>
-        
       </form>
     </div>
   </div>
@@ -38,9 +42,9 @@ export default {
   data() {
     return {
       isModalShown: false,
-      name: "",
-      phone: "",
-      boss: ""
+      name: null,
+      phone: null,
+      boss: null,
     };
   },
   computed: {
@@ -53,11 +57,11 @@ export default {
       this.$store.commit("addUser", {
         name: this.name,
         phone: this.phone,
-        boss: this.boss
+        boss: this.boss,
       });
       this.isModalShown = false;
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -1,40 +1,41 @@
 <template>
   <section>
     <header class="header">
-        <div class="header-title" @click="toggleSort('name')">Имя</div>
-        <div class="header-title" @click="toggleSort('phone')">Телефон</div>
+      <div class="header-title" @click="toggleSort('name')">Имя</div>
+      <div class="header-title" @click="toggleSort('phone')">Телефон</div>
     </header>
     <main class="main">
-      <TableRow v-if="!row.boss" v-for="row in sortedUsers" :key="row.id" :row="row" />
+      <TableRow
+        v-if="!row.boss"
+        v-for="row in sortedUsers"
+        :key="row.id"
+        :row="row"
+      />
     </main>
   </section>
 </template>
 
 <script>
-import TableRow from './TableRow.vue';
+import TableRow from "./TableRow.vue";
 
 export default {
-    name: "TableView",
-    components: [
-        TableRow,
-    ],
-    computed: {
-        sortedUsers() {
-            return this.$store.getters.sortedUsers;
-        }
+  name: "TableView",
+  components: [TableRow],
+  computed: {
+    sortedUsers() {
+      return this.$store.getters.sortedUsers;
     },
-    methods: {
-        toggleSort(name) {
-            this.$store.commit("toggleSort", name);
-        }
+  },
+  methods: {
+    toggleSort(name) {
+      this.$store.commit('toggleSort', name);
     },
-    components: { TableRow }
+  },
+  components: { TableRow },
 };
 </script>
 
 <style scoped>
-section {
-}
 .header {
   display: flex;
   width: fit-content;
