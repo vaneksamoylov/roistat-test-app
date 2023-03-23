@@ -1,21 +1,43 @@
-# vue-test
+# Roistat Test Project
 
-> A Vue.js project
+### Обзор
+* Интро
+* Технологии
+* Функционал
+* Установка пакетов
+* Скрипты
+* Контакты
 
-## Build Setup
+**Интро**
 
-``` bash
-# install dependencies
+Средствами Vue.js реализована таблица, в которую происходит добавление пользователей в приложении.
+Данное SPA реализовано в рамках тестового задания на позицию frontend developer в компанию [Roistat](https://roistat.com/ru/).
+
+**Технологии**
+
+* HTML
+* CSS
+* Vue2
+* Vuex3
+
+**Функционал**
+
+* Фильтрация по имени тега в табличном блоке
+* Сортировка по колонкам в табличном блоке
+
+**Установка пакетов**
+
+В терминале выполните команду:
+```
 npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+**Скрипты:**
+
+|Команда|Действие|
+|-------|--------|
+|npm run dev|Запуск дев-сервера для отладки приложения|
+|npm run build|Сборка проекта для деплоя|
+
+**Контакты**
+* telegram: [@vansamoff](https://t.me/vansamoff)
